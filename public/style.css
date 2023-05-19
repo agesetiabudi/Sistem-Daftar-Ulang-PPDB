@@ -1,0 +1,60 @@
+.soal{
+    margin-bottom: 3rem;
+}
+.card-jawaban{
+    display: flex;
+    padding: 11px;
+    border: 1px solid;
+    border-radius: 17px;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.box-code-jawaban{
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 13px;
+    margin-right: 1rem;
+}
+
+.card-jawaban.benar{
+    background-color: #c9f7f5;
+}
+
+.card-jawaban.benar .box-code-jawaban.benar{
+    background-color: #5dc6be;
+    color: #ffff;
+}
+
+.card-jawaban.salah{
+    background-color: #f6c8c8;
+}
+
+.card-jawaban.salah .box-code-jawaban.salah{
+    background-color: #c65d5d;
+    color: #ffff;
+}
+
+.card-jawaban.aktif{
+    background-color: #c8cff6;
+}
+
+.card-jawaban.aktif .box-code-jawaban.aktif{
+    background-color: #645dc6;
+    color: #ffff;
+}
+
+.card-topic{
+    background-color: #fff;
+    padding: 17px;
+    border-radius: 15px;
+    display: flex;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.body-detail{
+    width: 18%;
+}
