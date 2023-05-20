@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\JurusanController;
 use App\Http\Controllers\Peserta\UjianController;
@@ -22,6 +23,13 @@ use App\Http\Controllers\Admin\JalurPendaftaranController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[HomeController::class , 'index'])->name('index');
+Route::post('/cari-pendaftar',[HomeController::class , 'cari'])->name('cari-pendaftar');
+Route::post('/upload',[HomeController::class , 'upload'])->name('upload');
+Route::get('/upload-berkas/{pendaftar}',[HomeController::class , 'berkas'])->name('upload-berkas');
+Route::get('/terimakasih/{pendaftar}',[HomeController::class , 'terimakasih'])->name('terimakasih');
+
+
 Route::middleware('auth')->group(function() {
     Route::get('/home',[DashboardController::class , 'index'])->name('dashboard');
 });
