@@ -4,6 +4,14 @@
     <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
         <!--begin::Menu Nav-->
         <ul class="menu-nav">
+            <li class="menu-item {{ request()->routeIs('admin.dashboard*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                <a href="{{ route('admin.dashboard') }}" class="menu-link">
+                    <span class="svg-icon menu-icon">
+                        <i class="fas fa-home"></i>
+                    </span>
+                    <span class="menu-text">Dashboard</span>
+                </a>
+            </li>
             <li class="menu-item {{ request()->routeIs('admin.jurusan*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                 <a href="{{ route('admin.jurusan.index') }}" class="menu-link">
                     <span class="svg-icon menu-icon">
@@ -26,6 +34,14 @@
                         <i class="fas fa-book"></i>
                     </span>
                     <span class="menu-text">Tahun Pelajaran</span>
+                </a>
+            </li>
+            <li class="menu-item {{ request()->routeIs('admin.peserta-didik*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                <a href="{{ route('admin.peserta-didik.index') }}" class="menu-link">
+                    <span class="svg-icon menu-icon">
+                        <i class="fas fa-book"></i>
+                    </span>
+                    <span class="menu-text">Peserta Didik</span>
                 </a>
             </li>
         </ul>

@@ -1078,7 +1078,9 @@ var KTApexChartsDemo = function () {
 			_demo11();
 			_demo12();
 			_demo13();
+			chartnya();
 			_demo14();
+			chartJurusan();
 		}
 	};
 }();

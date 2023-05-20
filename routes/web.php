@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminSoalController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PengajuanController;
 use App\Http\Controllers\Admin\AdminUjianController;
+use App\Http\Controllers\Admin\PesertaDidikController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\TahunPelajaranController;
 use App\Http\Controllers\Admin\JalurPendaftaranController;
@@ -61,6 +62,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'wpa-admi
             Route::post('/store', [TahunPelajaranController::class, 'store'])->name('store');
             Route::put('/update/{tahunpelajaran}', [TahunPelajaranController::class, 'update'])->name('update');
             Route::get('/{tahunpelajaran}', [TahunPelajaranController::class, 'destroy'])->name('delete');
+        });
+        
+        Route::group(['prefix' => 'peserta-didik' , 'as' => 'peserta-didik.'],  function (){
+            Route::get('/', [PesertaDidikController::class, 'index'])->name('index');
+            Route::get('/detail/{tahunpelajaran}', [PesertaDidikController::class, 'detail'])->name('detail');
+            Route::post('/import', [PesertaDidikController::class, 'import'])->name('import');
         });
     });
 });
