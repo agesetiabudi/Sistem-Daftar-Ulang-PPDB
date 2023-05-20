@@ -3,13 +3,15 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\SiswaController;
+use App\Http\Controllers\Admin\JurusanController;
 use App\Http\Controllers\Peserta\UjianController;
-use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\AdminSoalController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PengajuanController;
 use App\Http\Controllers\Admin\AdminUjianController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\TahunPelajaranController;
+use App\Http\Controllers\Admin\JalurPendaftaranController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,13 +36,31 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'wpa-admi
     Route::middleware('auth:admin')->group(function () {
         Route::get('/', [AdminDashboardController::class , 'index'])->name('dashboard');
 
-        Route::group(['prefix' => 'kategori' , 'as' => 'kategori.'],  function (){
-            Route::get('/', [KategoriController::class, 'index'])->name('index');
-            Route::get('/create', [KategoriController::class, 'create'])->name('create');
-            Route::get('/edit/{kategori}', [KategoriController::class, 'edit'])->name('edit');
-            Route::post('/store', [KategoriController::class, 'store'])->name('store');
-            Route::put('/update/{kategori}', [KategoriController::class, 'update'])->name('update');
-            Route::get('/{kategori}', [KategoriController::class, 'destroy'])->name('delete');
+        Route::group(['prefix' => 'jurusan' , 'as' => 'jurusan.'],  function (){
+            Route::get('/', [JurusanController::class, 'index'])->name('index');
+            Route::get('/create', [JurusanController::class, 'create'])->name('create');
+            Route::get('/edit/{jurusan}', [JurusanController::class, 'edit'])->name('edit');
+            Route::post('/store', [JurusanController::class, 'store'])->name('store');
+            Route::put('/update/{jurusan}', [JurusanController::class, 'update'])->name('update');
+            Route::get('/{jurusan}', [JurusanController::class, 'destroy'])->name('delete');
+        });
+
+        Route::group(['prefix' => 'jalur-pendaftaran' , 'as' => 'jalur-pendaftaran.'],  function (){
+            Route::get('/', [JalurPendaftaranController::class, 'index'])->name('index');
+            Route::get('/create', [JalurPendaftaranController::class, 'create'])->name('create');
+            Route::get('/edit/{jalurpendaftaran}', [JalurPendaftaranController::class, 'edit'])->name('edit');
+            Route::post('/store', [JalurPendaftaranController::class, 'store'])->name('store');
+            Route::put('/update/{jalurpendaftaran}', [JalurPendaftaranController::class, 'update'])->name('update');
+            Route::get('/{jalurpendaftaran}', [JalurPendaftaranController::class, 'destroy'])->name('delete');
+        });
+
+        Route::group(['prefix' => 'tahun-pelajaran' , 'as' => 'tahun-pelajaran.'],  function (){
+            Route::get('/', [TahunPelajaranController::class, 'index'])->name('index');
+            Route::get('/create', [TahunPelajaranController::class, 'create'])->name('create');
+            Route::get('/edit/{tahunpelajaran}', [TahunPelajaranController::class, 'edit'])->name('edit');
+            Route::post('/store', [TahunPelajaranController::class, 'store'])->name('store');
+            Route::put('/update/{tahunpelajaran}', [TahunPelajaranController::class, 'update'])->name('update');
+            Route::get('/{tahunpelajaran}', [TahunPelajaranController::class, 'destroy'])->name('delete');
         });
     });
 });
