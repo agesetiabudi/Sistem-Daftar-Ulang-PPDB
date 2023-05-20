@@ -57,7 +57,7 @@
                                             <td><input type="check" name="legalisir" value="true"></td>
                                         </tr>
                                         <tr>
-                                            <td>Sudah Mengisi link google form ?</td>
+                                            <td>Sudah Mengisi link isian dapodik ?</td>
                                             <td><input type="check" name="google_form" value="true"></td>
                                         </tr>
                                     </table>
