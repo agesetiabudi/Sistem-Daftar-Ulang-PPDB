@@ -117,9 +117,6 @@
                                     <!--end::Svg Icon-->
                                     </span>
                                 </button>
-                                <button class="btn btn-primary">
-                                    Peserta
-                                </button>
                             </div>
                     `
                 },
