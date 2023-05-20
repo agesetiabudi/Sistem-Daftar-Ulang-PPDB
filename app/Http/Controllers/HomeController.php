@@ -42,6 +42,7 @@ class HomeController extends Controller
             'kelakuan'            => 'max:500',
             'butawarna'           => 'max:500',
             'foto'                => 'max:500',
+            'ijazah'              => 'max:500'
         ]);
 
         if($file = $request->file('bukti')){
@@ -108,6 +109,14 @@ class HomeController extends Controller
             $foto = null;
         }
 
+        if($file = $request->file('ijazah')){
+            $name =  $file->hashName();
+            $file->move('berkas/',$name);
+            $ijazah = $name;
+        }else{
+            $ijazah = null;
+        }
+
         Berkas::create([
             'id_user'       => $request->user_id,
             'bukti'         => $bukti,
@@ -116,7 +125,10 @@ class HomeController extends Controller
             'akta'          => $akta,
             'kelakuan_baik' => $kelakuan,
             'foto'          => $foto,
-            'butawarna'     => $butawarna
+            'butawarna'     => $butawarna,
+            'ijazah'        => $ijazah,
+            'legalisir'     => $request->legalisir,
+            'google_form'   => $request->google_form
         ]);
 
         return redirect()->route('terimakasih',$request->user_id);

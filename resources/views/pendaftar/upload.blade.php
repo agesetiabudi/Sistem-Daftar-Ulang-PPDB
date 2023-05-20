@@ -48,6 +48,18 @@
                                             <td>Pas Foto</td>
                                             <td><input type="file" name="foto"></td>
                                         </tr>
+                                        <tr>
+                                            <td>Ijazah / Surat Keterangan Lulus</td>
+                                            <td><input type="file" name="ijazah"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Legaslisir Raport semester 1 s/d 5</td>
+                                            <td><input type="check" name="legalisir" value="true"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sudah Mengisi link google form ?</td>
+                                            <td><input type="check" name="google_form" value="true"></td>
+                                        </tr>
                                     </table>
                                     <div class="card bg-warning p-3">
                                         *masing masing file maximal 500kb
