@@ -29,6 +29,7 @@ Route::post('/cari-pendaftar',[HomeController::class , 'cari'])->name('cari-pend
 Route::post('/upload',[HomeController::class , 'upload'])->name('upload');
 Route::get('/upload-berkas/{pendaftar}',[HomeController::class , 'berkas'])->name('upload-berkas');
 Route::get('/terimakasih/{pendaftar}',[HomeController::class , 'terimakasih'])->name('terimakasih');
+Route::get('/donwload-bukti/{pendaftar}',[HomeController::class , 'bukti'])->name('bukti');
 
 
 Route::middleware('auth')->group(function() {

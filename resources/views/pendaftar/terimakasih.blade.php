@@ -12,7 +12,7 @@
                             <h3>Terimakasih {{ $pendaftar->nama }}</h3>
                             <img src="/logo.png" class="w-50 mt-5 mb-5">
                             <div class="text-muted font-weight-bold mb-5 mt-5">Silahkan tunggu informasi selanjutnya mengenai masa pengenalan siswa atau <b>MPLS</b></div>
-                            <a href="/" class="btn btn-primary">kembali kehalaman awal</a>
+                            <a href="/donwload-bukti/{{ $pendaftar->id }}" class="btn btn-primary">kembali kehalaman awal</a>
                         </div>
                     </div>
                     <!--end::Login Sign in form-->

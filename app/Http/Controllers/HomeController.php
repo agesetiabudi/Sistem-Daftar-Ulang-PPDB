@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berkas;
+use PDF;
 use App\Models\PesertaDidik;
 use Illuminate\Http\Request;
 use App\Models\JalurPendaftaran;
@@ -137,5 +138,12 @@ class HomeController extends Controller
     public function terimakasih (PesertaDidik $pendaftar)
     {
         return view('pendaftar.terimakasih',compact('pendaftar'));
+    }
+
+    public function bukti (PesertaDidik $pendaftar)
+    {
+        $pdf = PDF::loadView('pdf_view', ['pendaftar'=>$pendaftar]);
+        // return $pdf->stream();
+        return $pdf->download('BK-'.$pendaftar->nomor_daftar.'.pdf');
     }
 }
