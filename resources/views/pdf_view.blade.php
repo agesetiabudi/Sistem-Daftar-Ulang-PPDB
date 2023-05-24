@@ -8,13 +8,13 @@
 </head>
 <style>
     body {
-        background-image: url('https://sobat.sgp1.cdn.digitaloceanspaces.com/Screenshot%202023-05-23%20at%2006.01.11.png');
+        background-image: url('https://sobat.sgp1.cdn.digitaloceanspaces.com/Screenshot%202023-05-24%20at%2020.09.53.png');
         background-repeat: no-repeat;
         margin-left:20px;
         font-size: 14px;
     },
     .absolute-text{
-        margin-top : 259px;
+        margin-top : 264px;
         margin-left: 250px;
     }
     .margin-top{

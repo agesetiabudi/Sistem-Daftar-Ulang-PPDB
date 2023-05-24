@@ -143,7 +143,7 @@ class HomeController extends Controller
     public function bukti (PesertaDidik $pendaftar)
     {
         $pdf = PDF::loadView('pdf_view', ['pendaftar'=>$pendaftar]);
-        // return $pdf->stream();
+        return $pdf->stream();
         return $pdf->download('BK-'.$pendaftar->nomor_daftar.'.pdf');
     }
 }
